@@ -4,22 +4,23 @@ require("dotenv").config();
 const fs = require("fs").promises;
 const key = process.env.OPENAI_API_KEY;
 
-const { Configuration, OpenAIApi } = require("openai");
+const OpenAI = require("openai");
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: key,
 });
-const openai = new OpenAIApi(configuration);
 
-const predict = async function () {
-  const response = await openai.createImage({
-    prompt:
-      "A realistic 360 degree background image from the perspective of an individual standing in their living room looking out the window.",
+const predict = async function (prompt) {
+  const response = await openai.images.generate({
+    prompt: prompt,
     n: 1,
     size: "1024x1024",
   });
-  console.log(response.data);
-  return response.data;
+  const imageUrl = response.data.images[0].url;
+  console.log(imageUrl);
+  return imageUrl;
 };
 
-predict();
+const prompt = "A realistic 360 degree background image from the perspective of an individual standing in their living room looking out the window.";
+
+predict(prompt);

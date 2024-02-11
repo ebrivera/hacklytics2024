@@ -20,12 +20,13 @@ const Welcome = () => {
           Enter a place you would like to visit
         </Text>
       </Flex>
-      <Flex justifyContent="center" align="center">
+      <Flex justifyContent="center" align="center" color = "red">
         <Input w="50vh" placeholder="Beach, Paris, Shopping Mall, etc."></Input>
         <Box w="5"></Box>
         <Button>Go!</Button>
       </Flex>
       <Box flex="1"></Box>
+      <iframe src='http://localhost:8081/index.html' style={{ width: '100%', height: '500px' }}></iframe>
     </Flex>
   );
 };
