@@ -47,7 +47,10 @@ const Welcome = () => {
         <Button onClick={handleSubmit}>Go!</Button>
       </Flex>
       <Box flex="1"></Box>
-      <iframe src='http://localhost:8081/index.html' style={{ width: '100%', height: '500px' }}></iframe>
+      <iframe
+        src="http://localhost:8081/vr/"
+        style={{ width: "100%", height: "500px" }}
+      ></iframe>
     </Flex>
   );
 };
