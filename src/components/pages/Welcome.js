@@ -33,7 +33,7 @@ const Welcome = () => {
       {" "}
       <Flex flex="1" direction="column" justifyContent="center" align="center">
         <Text fontSize="4xl" as="b">
-          Enter a place you would like to visit
+          Enter a place you would like to visit!
         </Text>
       </Flex>
       <Flex justifyContent="center" align="center">
